@@ -1,0 +1,12 @@
+<mat-card class="person-card"  *ngIf=person (click)="navigateToPersonDetail(person.name)">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="person-card-avatar" [style.backgroundImage]="'url('')'"></div> -->
+      <mat-card-title>{{ person.name }}</mat-card-title>
+      <mat-card-subtitle>Current Rank: {{ person.currentRank }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Current Duty Title: {{ person.currentDutyTitle }}</p>
+      <p>Career Start Date: {{ person.careerStartDate  | date:'mediumDate'}}</p>
+      <p>Career End Date: {{ (person.careerEndDate  | date:'mediumDate' ) || 'Still Active'}}</p>
+      </mat-card-content>
+  </mat-card>
