@@ -1,9 +1,17 @@
 <div class="app-container">
+  <!-- Header (Toolbar) -->
   <mat-toolbar color="primary">
     <button mat-button [routerLink]="['/person']">
       <mat-icon>home</mat-icon>
-      <h1>Astronaut Career Tracking System</h1>
+      <h1>{{title}}</h1>
     </button>
   </mat-toolbar>
+
+  <!-- Main Content -->
   <router-outlet></router-outlet>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <p>&copy; 2024 BAM Technologies. All rights reserved.</p>
+  </footer>
 </div>

@@ -14,10 +14,11 @@
     </mat-card-header>
     <!-- Person details section -->
     <mat-card-content>
-      <p><strong>Rank:</strong> {{ personDetail?.currentRank || 'Civilian'}}</p>
-      <p><strong>Duty Title:</strong> {{ personDetail?.currentDutyTitle || 'Civilian'}}</p>
-      <p><strong>Career Start Date:</strong> {{( personDetail?.careerStartDate | date: 'mediumDate' )|| 'None'}}</p>
-      <p><strong>Career End Date:</strong> {{( personDetail?.careerEndDate | date:'mediumDate' )|| 'None'}}</p>
+      <p><strong>Current Rank:</strong> {{ personDetail?.currentRank || 'Civilian'}}</p>
+      <p><strong>Current Duty Title:</strong> {{ personDetail?.currentDutyTitle || 'Sir'}}</p>
+      <p><strong>Career Start Date:</strong> {{( personDetail?.careerStartDate | date: 'mediumDate' )|| 'TBD'}}</p>
+      <p *ngIf=personDetail?.careerStartDate><strong>Career End Date: </strong> {{ (personDetail?.careerEndDate  | date:'mediumDate' ) || 'Still Active'}}</p>
+      <p *ngIf=!personDetail?.careerStartDate><strong>Career End Date: </strong>{{ (personDetail?.careerEndDate  | date:'mediumDate' ) || 'Not Enlisted'}}</p>
     </mat-card-content>
     <!-- Add Astronaut button -->
     <mat-card-actions>

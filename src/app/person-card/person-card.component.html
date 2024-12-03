@@ -2,12 +2,12 @@
     <mat-card-header>
       <!-- <div mat-card-avatar class="person-card-avatar" ></div> -->
       <mat-card-title >{{ person.name }}</mat-card-title>
-      <mat-card-subtitle>Current Rank: {{ person.currentRank || 'Civilian'}}</mat-card-subtitle>
+      <mat-card-subtitle><strong>Current Rank: </strong>{{ person.currentRank || 'Civilian'}}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
-      <p>Current Duty Title: {{ person.currentDutyTitle || 'Sir'}}</p>
-      <p>Career Start Date: {{ (person.careerStartDate  | date:'mediumDate') || 'TBD'}}</p>
-      <p *ngIf=person.careerStartDate>Career End Date: {{ (person.careerEndDate  | date:'mediumDate' ) || 'Still Active'}}</p>
-      <p *ngIf=!person.careerStartDate>Career End Date: {{ (person.careerEndDate  | date:'mediumDate' ) || 'Not Enlisted'}}</p>
+      <p><strong>Current Duty Title: </strong>{{ person.currentDutyTitle || 'Sir'}}</p>
+      <p><strong>Career Start Date: </strong>{{ (person.careerStartDate  | date:'mediumDate') || 'TBD'}}</p>
+      <p *ngIf=person.careerStartDate><strong>Career End Date: </strong>{{ (person.careerEndDate  | date:'mediumDate' ) || 'Still Active'}}</p>
+      <p *ngIf=!person.careerStartDate><strong>Career End Date: </strong>{{ (person.careerEndDate  | date:'mediumDate' ) || 'Not Enlisted'}}</p>
       </mat-card-content>
   </mat-card>

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { RouterModule, RouterOutlet} from '@angular/router';
+import { ActivatedRoute, RouterModule, RouterOutlet} from '@angular/router';
 import { MatIcon } from '@angular/material/icon';
 import { MatToolbar } from '@angular/material/toolbar';
 import { MatButton } from '@angular/material/button';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -14,5 +15,6 @@ import { MatButton } from '@angular/material/button';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  title = 'Astronaut Career Tracking System';
   
 }

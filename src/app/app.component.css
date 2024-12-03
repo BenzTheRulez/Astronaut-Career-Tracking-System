@@ -20,3 +20,25 @@ mat-toolbar button {
 .content {
   padding: 16px;
 }
+
+/* app.component.css */
+
+/* Ensure the page takes up the full height */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Footer Styling */
+.app-footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin-top: auto; /* Push footer to the bottom */
+  color: #555;
+}
+
+mat-toolbar {
+  z-index: 1; /* Ensure toolbar stays on top of other content */
+}

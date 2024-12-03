@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Person } from '../acts.service';
+import { Person } from '../app.service';
 import { MatCardModule } from '@angular/material/card';
 import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -16,10 +16,9 @@ import { ActivatedRoute, Router, RouterLink, RouterModule } from '@angular/route
 export class PersonCardComponent {
   @Input() person?: Person;
   
-  constructor(private dialog: MatDialog, private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    console.log('person', this.person);
   }
   navigateToPersonDetail(name: string) {
     // Navigate to the person detail page with the person's ID as a route parameter

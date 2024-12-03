@@ -27,7 +27,7 @@ export interface AstronautDuty {
 @Injectable({
   providedIn: 'root'
 })
-export class ACTSService {
+export class AppService {
   private apiUrl = 'http://localhost:5204';
 
   constructor(private http: HttpClient) { }

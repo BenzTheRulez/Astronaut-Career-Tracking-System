@@ -1,8 +1,8 @@
 import { CommonModule, DatePipe, Location } from '@angular/common';
 import { Component, OnInit} from '@angular/core';
-import { ACTSService, AstronautDuty, Person } from '../acts.service';
+import { AppService, AstronautDuty } from '../app.service';
 import { AgGridModule } from 'ag-grid-angular'; 
-import { ColDef, GridApi, GridOptions } from 'ag-grid-community';
+import { ColDef, GridOptions } from 'ag-grid-community';
 import { ActivatedRoute } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
@@ -42,7 +42,7 @@ export class PersonDetailModalComponent implements OnInit {
       valueFormatter: (params: any) => this.formatDate(params.value) },
   ];
 
-  constructor(private service: ACTSService, private datePipe: DatePipe, private route: ActivatedRoute, private location: Location, public dialog: MatDialog) { }
+  constructor(private service: AppService, private datePipe: DatePipe, private route: ActivatedRoute, private location: Location, public dialog: MatDialog) { }
   
   ngOnInit() {
     this.route.params.subscribe((params: any) => this.personName = params['name']);
@@ -57,7 +57,7 @@ export class PersonDetailModalComponent implements OnInit {
         this.personDetail = data.person;  // Store the response in the people array
         this.rowData = data.astronautDuties;
       },
-      error: (error) => {
+      error: (error: any) => {
         this.errorMessage = 'Failed to load people data';
         console.error(error);
       }
