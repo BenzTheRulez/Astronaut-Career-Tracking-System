@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddAstronautDialogComponent } from './add-astronaut-dialog.component';
+import { AddAstronautDutyDialogComponent } from './add-astronaut-duty-dialog.component';
 
 describe('AddAstronautDialogComponent', () => {
-  let component: AddAstronautDialogComponent;
-  let fixture: ComponentFixture<AddAstronautDialogComponent>;
+  let component: AddAstronautDutyDialogComponent;
+  let fixture: ComponentFixture<AddAstronautDutyDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AddAstronautDialogComponent]
+      declarations: [AddAstronautDutyDialogComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AddAstronautDialogComponent);
+    fixture = TestBed.createComponent(AddAstronautDutyDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

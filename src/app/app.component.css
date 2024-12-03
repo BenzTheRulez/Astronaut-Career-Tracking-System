@@ -4,3 +4,19 @@
   .mat-mdc-button:not(:disabled) {
     color: #fafafa;
 }
+/* Styling for the secondary (sub) toolbar */
+.secondary-toolbar {
+  background-color: #f0f0f0; /* Lighter background color for the secondary toolbar */
+  color: #333; /* Dark text color */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Optional: Make buttons on the toolbar larger or modify their spacing */
+mat-toolbar button {
+  margin-right: 10px;
+}
+
+/* Content styling */
+.content {
+  padding: 16px;
+}

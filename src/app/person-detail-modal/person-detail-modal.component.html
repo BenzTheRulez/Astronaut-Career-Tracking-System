@@ -1,14 +1,17 @@
 <!-- person-detail.component.html -->
+<mat-toolbar class="secondary-toolbar">
+    <span>A.C.T.S. Astronaut Duties</span>
+</mat-toolbar>
+
 <mat-card class="person-detail-card">
-      <!-- Back Button -->
-  <div class="back-button">
-    <button mat-button (click)="goBack()">Back</button>
-  </div>
-    <!-- Title -->
+    <!-- Back Button -->
+    <mat-card-actions>
+        <button mat-raised-button (click)="goBack()">Back</button>
+    </mat-card-actions>
+    <!-- Person Name -->
     <mat-card-header>
       <mat-card-title>{{ personDetail?.name || 'Civilian'}}</mat-card-title>
     </mat-card-header>
-  
     <!-- Person details section -->
     <mat-card-content>
       <p><strong>Rank:</strong> {{ personDetail?.currentRank || 'Civilian'}}</p>
@@ -16,24 +19,25 @@
       <p><strong>Career Start Date:</strong> {{( personDetail?.careerStartDate | date: 'mediumDate' )|| 'None'}}</p>
       <p><strong>Career End Date:</strong> {{( personDetail?.careerEndDate | date:'mediumDate' )|| 'None'}}</p>
     </mat-card-content>
-    <!-- Add Astronaut button (aligned with the duty history section) -->
+    <!-- Add Astronaut button -->
     <mat-card-actions>
         <button mat-raised-button color="primary" (click)="openAddAstronautDialog()">Add New Astronaut Duty</button>
-      </mat-card-actions>
+    </mat-card-actions>
     <!-- AG Grid Section -->
     <mat-card-content class="ag-grid-section">
-      <h3>Astronaut's Duty History</h3>
-      <div class="ag-grid-container">
-        <ag-grid-angular
-        style="width: 100%; height: 300px;"
-        class="ag-theme-alpine"
-        [columnDefs]="columnDefs"
-        [rowData]="rowData"
-        [gridOptions]="gridOptions"
-        (gridReady)="onGridReady($event)"
-        [domLayout]="'autoHeight'">
-      </ag-grid-angular>
-    </div>
-  </mat-card-content>
-
+        <mat-card-actions>
+            <h2>Astronaut's Duty History</h2>
+        </mat-card-actions>
+        <div class="ag-grid-container">
+            <ag-grid-angular
+            style="width: 100%; height: 300px;"
+            class="ag-theme-alpine"
+            [columnDefs]="columnDefs"
+            [rowData]="rowData"
+            [gridOptions]="gridOptions"
+            (gridReady)="onGridReady($event)"
+            [domLayout]="'autoHeight'">
+            </ag-grid-angular>
+        </div>
+    </mat-card-content>
 </mat-card>

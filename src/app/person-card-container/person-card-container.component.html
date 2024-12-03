@@ -1,4 +1,13 @@
   <!-- Person Cards Container -->
+  <mat-toolbar class="secondary-toolbar">
+    <span>A.C.T.S. Profiles</span>
+  </mat-toolbar>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">
+      <mat-icon>add</mat-icon>
+      Profile
+    </button>
+  </mat-card-actions>
   <div class="person-card-container">
     <app-person-card *ngFor="let person of people" [person]="person" ></app-person-card>
   </div>

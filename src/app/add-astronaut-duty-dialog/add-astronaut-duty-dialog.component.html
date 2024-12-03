@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Add New Astronaut Duty</h2>
+<mat-dialog-content>
+  <form #form="ngForm" (ngSubmit)="onSave()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput disabled [(ngModel)]="data.name" name="name">
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Rank</mat-label>
+      <input matInput [(ngModel)]="data.rank" required name="rank" #rank="ngModel">
+      <mat-error *ngIf="rank.invalid && rank.touched">Rank is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Duty Title</mat-label>
+      <input matInput [(ngModel)]="data.dutyTitle" required name="dutyTitle" #dutyTitle="ngModel">
+      <mat-error *ngIf="dutyTitle.invalid && dutyTitle.touched">Duty Title is required</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Duty Start Date</mat-label>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="data.dutyStartDate" [min]="defaultStartDate" required name="dutyStartDate" #dutyStartDate="ngModel">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="dutyStartDate.invalid && dutyStartDate.touched">Duty Start Date is required</mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button (click)="onSave()" [disabled]="form.invalid">Save</button>
+</mat-dialog-actions>

@@ -1,33 +1,9 @@
-/* app.component.css */
-
-/* Container for the entire app */
-.app-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px;
-    min-height: 100vh;
-    background-color: #f4f4f4; /* Light background color */
-  }
-  
-  /* Header for the app */
-  .app-header {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-bottom: 20px;
-  }
-  
   /* Flex container for displaying person cards */
   .person-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    max-width: 1200px; /* To control the maximum width of the grid */
-    width: 100%;
-    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid with cards */
+    gap: 16px; /* Add spacing between cards */
+    margin: 16px;
   }
   
   /* Styling for the individual person cards */
@@ -53,63 +29,9 @@
     transform: scale(1.05);
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
   }
-  
-  /* Styling for the individual card header (name, rank) */
-  mat-card-header {
-    padding-bottom: 12px;
-    margin-bottom: 12px;
-    border-bottom: 1px solid #ddd;
-    flex-shrink: 0; /* Prevents the header from shrinking */
-  }
-  
-  /* Styling for the title (name) */
-  mat-card-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #2c3e50;
-    overflow: hidden; /* Ensures no overflow for long names */
-    text-overflow: ellipsis; /* Adds ellipsis (...) for text that overflows */
-    white-space: nowrap; /* Prevents the text from wrapping */
-  }
-  
-  /* Styling for the subtitle (rank) */
-  mat-card-subtitle {
-    font-size: 14px;
-    color: #7f8c8d;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  /* Styling for the card content (duty title, career dates, etc.) */
-  mat-card-content {
-    font-size: 14px;
-    color: #34495e;
-    margin-bottom: 12px;
-    flex-grow: 1; /* Ensures this section grows to fill available space */
-    overflow: hidden; /* Prevents content from overflowing */
-  }
-  
-  mat-card-content p {
-    margin: 8px 0;
-    line-height: 1.6;
-    color: #555;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  /* Responsive styling for mobile
-  @media (max-width: 768px) {
+  /* Make the container responsive */
+  @media (max-width: 600px) {
     .person-card-container {
-      flex-direction: column;
-      align-items: center;
+      grid-template-columns: 1fr; /* Stack cards on smaller screens */
     }
-  
-    .person-card {
-      width: 100%;
-      max-width: 400px; 
-      margin-bottom: 20px;
-    }
-  } */
-  
+  }

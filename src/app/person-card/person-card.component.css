@@ -1,0 +1,61 @@
+.person-card {
+    cursor: pointer;
+}
+
+/* Style for each person card */
+.person-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
+    height: 250px; /* Ensure all cards are the same height */
+    background-color: #f5f5f5ea;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Add hover effect for interactivity */
+  .person-card:hover {
+    transform: translateY(-5px); /* Slightly lift the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
+  }
+  
+  /* Style for the card header */
+  mat-card-header {
+    padding: 16px;
+    background-color: #8251ff4e; /* Light gray background for header */
+    border-radius: 8px 8px 0 0; /* Round top corners */
+  }
+  
+  /* Title and subtitle styling */
+  mat-card-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  mat-card-subtitle {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Card content styling */
+  mat-card-content {
+    padding: 16px;
+    flex-grow: 1; /* Ensure content grows to fill available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Paragraph styling */
+  mat-card-content p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #333;
+  }
+  /* Make the container responsive */
+  @media (max-width: 600px) {
+    .person-card-container {
+      grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    }
+  }
